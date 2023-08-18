@@ -9,10 +9,8 @@ const Navbar = () => {
   return (
     <>
       <section className="top-0 z-50 flex gap-6">
-        <div
-          className={`hidden w-80 bg-[#0e0e0e] px-4  text-gray-100 duration-300 sm:block`}
-        >
-          <div className="flex justify-end py-3"></div>
+        <div className="hidden w-80 bg-[#0e0e0e] px-4  text-gray-100 duration-300 sm:block">
+          <div className="flex justify-end py-3" />
           <div className=" mt-4 flex items-center justify-center gap-2 rounded-full bg-white text-slate-600 ">
             <img
               src={logo}
@@ -25,27 +23,27 @@ const Navbar = () => {
             </div>
           </div>
           <div className="relative mt-4 flex flex-col justify-between gap-4">
-            {navLinks?.map((menu, i) => (
+            {navLinks?.map((menu) => (
               <Link
                 to={menu?.link}
-                key={i}
+                key={menu.name}
                 className={` ${
                   menu?.margin && 'mt-5 sm:mt-24'
                 } group flex items-center gap-3.5 rounded-md  p-2 text-sm font-medium text-white hover:bg-white hover:text-gray-900`}
               >
                 <div>{React.createElement(menu?.icon, { size: '20' })}</div>
-                <h2 className={`flex`}>{menu?.name}</h2>
+                <h2 className="flex">{menu?.name}</h2>
               </Link>
             ))}
-            {footLinks?.map((menu, i) => (
+            {footLinks?.map((menu) => (
               <Link
                 to={menu?.link}
-                key={i}
+                key={menu.name}
                 className={` ${menu?.margin && 'mt-14 sm:mt-80'}
               group flex items-center gap-3.5 rounded-md  p-2 text-sm font-medium text-white hover:bg-white hover:text-gray-900`}
               >
                 <div>{React.createElement(menu?.icon, { size: '20' })}</div>
-                <h2 className={`flex`}>{menu?.name}</h2>
+                <h2 className="flex">{menu?.name}</h2>
               </Link>
             ))}
           </div>
@@ -56,13 +54,14 @@ const Navbar = () => {
           } px-4 text-gray-100 duration-300 sm:hidden`}
         >
           <div className="flex justify-end py-3">
-            <img
-              src={open ? close : menu}
-              alt="menu"
-              size={26}
+            <button
               className="cursor-pointer"
+              type="button"
               onClick={() => setOpen(!open)}
-            />
+              aria-label={open ? 'Close Menu' : 'Open Menu'}
+            >
+              <img src={open ? close : menu} alt="menu" size={26} />
+            </button>
           </div>
           <div className=" mt-4 flex items-center justify-center gap-2 rounded-full bg-white text-slate-600 ">
             <img
@@ -76,10 +75,10 @@ const Navbar = () => {
             </div>
           </div>
           <div className="relative mt-4 flex flex-col justify-between gap-4">
-            {navLinks?.map((menu, i) => (
+            {navLinks?.map((menu) => (
               <Link
                 to={menu?.link}
-                key={i}
+                key={menu.name}
                 className={` ${
                   menu?.margin && 'mt-5 sm:mt-24'
                 } group flex items-center gap-3.5 rounded-md  p-2 text-sm font-medium text-white hover:bg-white hover:text-gray-900`}
@@ -87,7 +86,7 @@ const Navbar = () => {
                 <div>{React.createElement(menu?.icon, { size: '20' })}</div>
                 <h2
                   style={{
-                    transitionDelay: `${i + 3}00ms`,
+                    transitionDelay: `${menu.name + 3}00ms`,
                   }}
                   className={`whitespace-pre duration-500 ${
                     !open && 'translate-x-28 overflow-hidden opacity-0'
@@ -104,17 +103,17 @@ const Navbar = () => {
                 </h2>
               </Link>
             ))}
-            {footLinks?.map((menu, i) => (
+            {footLinks?.map((menu) => (
               <Link
                 to={menu?.link}
-                key={i}
+                key={menu.name}
                 className={` ${menu?.margin && 'mt-14 sm:bottom-0'}
               group flex items-center gap-3.5 rounded-md  p-2 text-sm font-medium text-white hover:bg-white hover:text-gray-900`}
               >
                 <div>{React.createElement(menu?.icon, { size: '20' })}</div>
                 <h2
                   style={{
-                    transitionDelay: `${i + 3}00ms`,
+                    transitionDelay: `${menu.name + 3}00ms`,
                   }}
                   className={`whitespace-pre duration-500 ${
                     !open && 'translate-x-28 overflow-hidden opacity-0'

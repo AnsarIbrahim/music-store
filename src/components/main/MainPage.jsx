@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
   BsMusicNote,
   BsFileMusic,
   BsFillMicMuteFill,
   BsThreeDotsVertical,
 } from 'react-icons/bs';
-import { BiMessageSquare, BiSolidMessageRounded } from 'react-icons/bi';
+import {
+  BiMessageSquare,
+  BiSolidMessageRounded,
+  BiLeftArrowAlt,
+  BiRightArrowAlt,
+} from 'react-icons/bi';
 import { AiOutlineSearch, AiFillPlayCircle } from 'react-icons/ai';
 import { GoDotFill } from 'react-icons/go';
 import { RiTimerFlashFill } from 'react-icons/ri';
 import { MdPhone } from 'react-icons/md';
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
+
 import { logo, play } from '../assets';
 
 const MainPage = ({ randomImages }) => {
@@ -100,11 +106,14 @@ const MainPage = ({ randomImages }) => {
 
           <div className="flex items-center justify-between">
             <p className="flex items-center gap-2 p-3">
-              <GoDotFill />{' '}
+              <GoDotFill />
+              {' '}
               <span className=" opacity-20">50 Lessons Available</span>
             </p>
             <p className="flex items-center gap-2 p-3 opacity-20">
-              <RiTimerFlashFill /> Ends in: 45 min
+              <RiTimerFlashFill />
+              {' '}
+              Ends in: 45 min
             </p>
           </div>
         </div>
@@ -126,7 +135,10 @@ const MainPage = ({ randomImages }) => {
                 />
                 {index === numImagesToShow - 1 && showOverlay && (
                   <div className="absolute inset-0 flex items-center justify-center rounded-3xl bg-white bg-opacity-50">
-                    +{randomImages.length - numImagesToShow} more
+                    +
+                    {randomImages.length - numImagesToShow}
+                    {' '}
+                    more
                   </div>
                 )}
               </div>
@@ -136,6 +148,15 @@ const MainPage = ({ randomImages }) => {
       </div>
     </>
   );
+};
+
+MainPage.propTypes = {
+  randomImages: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      icon: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default MainPage;

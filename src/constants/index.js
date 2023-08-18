@@ -27,7 +27,9 @@ import {
 } from '../components/assets/random';
 
 export const navLinks = [
-  { name: 'Pratices', link: '/', icon: HiOutlineSquares2X2, margin: true },
+  {
+    name: 'Pratices', link: '/', icon: HiOutlineSquares2X2, margin: true,
+  },
   { name: 'Courses', link: '/next', icon: MdOutlineFort },
   { name: 'Progress', link: '/', icon: BsPatchCheckFill },
   { name: 'Instructors', link: '/', icon: MdPeopleAlt },
@@ -35,7 +37,9 @@ export const navLinks = [
 ];
 
 export const footLinks = [
-  { name: 'Settings', link: '/', icon: FiSettings, margin: true },
+  {
+    name: 'Settings', link: '/', icon: FiSettings, margin: true,
+  },
   { name: 'Sign Out', link: '/', icon: PiSignOutBold },
 ];
 
