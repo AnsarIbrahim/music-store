@@ -3,7 +3,7 @@ import { MusicChat, Navbar, MainPage } from './main';
 import { randomImages } from '../constants';
 
 const Home = () => (
-  <div className="flex bg-gray-300">
+  <div className="flex min-w-max bg-gray-300">
     <Navbar />
     <div className="flex flex-col sm:flex-row">
       <div className="">
