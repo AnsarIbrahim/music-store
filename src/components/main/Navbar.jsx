@@ -9,17 +9,17 @@ const Navbar = () => {
   return (
     <>
       <section className="top-0 z-50 flex gap-6">
-        <div className="hidden w-80 bg-[#0e0e0e] px-4  text-gray-100 duration-300 sm:block">
+        <div className="hidden w-48 bg-[#0e0e0e] px-1 py-1  text-gray-100 duration-300 sm:block">
           <div className="flex justify-end py-3" />
-          <div className=" mt-4 flex items-center justify-center gap-2 rounded-full bg-white text-slate-600 ">
+          <div className=" mt-4 flex items-center justify-center gap-2 rounded-full bg-white py-1 text-slate-600 ">
             <img
               src={logo}
               alt="logo"
-              className="h-9 w-9 rounded-full bg-white"
+              className="h-6 w-6 rounded-full bg-white"
             />
-            <div className="hidden flex-col font-sans sm:flex ">
+            <div className="hidden flex-col font-sans text-xs sm:flex ">
               <p>Music Theory</p>
-              <p className="text-sm underline">musiclearner@musicme</p>
+              <p className="underline">musiclearner@musicme</p>
             </div>
           </div>
           <div className="relative mt-4 flex flex-col justify-between gap-4">
