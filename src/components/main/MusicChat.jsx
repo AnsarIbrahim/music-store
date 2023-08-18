@@ -6,7 +6,7 @@ import { musicFoot } from '../../constants';
 
 const MusicChat = () => (
   <>
-    <div className="ml-20 mt-10 flex flex-col items-center rounded-3xl border bg-white">
+    <div className="ml-20 mr-10 mt-10 flex flex-col items-center rounded-3xl border bg-white">
       <div className="flex flex-col items-center p-4">
         <div className="flex w-96 items-center justify-between">
           <p className="text-3xl font-bold">Music Chat</p>
@@ -126,7 +126,7 @@ const MusicChat = () => (
         </div>
       </div>
     </div>
-    <div className="mb-10 ml-20 mt-5 flex flex-col items-center gap-2">
+    <div className="mb-10 ml-20 mr-10 mt-5 flex flex-col items-center gap-2">
       {musicFoot?.map((item) => (
         <div
           className="flex w-96 cursor-pointer items-center justify-between rounded-3xl border bg-white p-2 text-black"
